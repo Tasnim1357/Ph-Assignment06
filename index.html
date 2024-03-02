@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewBee Forum</title>
+    <!-- Daisy UI link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwecome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Tailwind Config File -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+      <!-- CSS Styles -->
+    <style>
+
+
+.mulish {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    </style>  
+
+</head>
+<body class=" p-0 m-0 box-border scroll-smooth mulish">
+  <!-- Header starts -->
+   <header class="max-w-[1300px] lg:mx-auto lg:px-8 px-3 pt-7">
+     <!-- Navbar section starts -->
+     <nav class="max-w-[1300px] lg:mx-auto  px-3 pt-7">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start w-[80%]">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <li> <div class="relative group">
+                <a class="text-black focus:outline-none bg-[#0307121a] p-2 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M2.25 12.0001L11.204 3.04507C11.644 2.60607 12.356 2.60607 12.795 3.04507L21.75 12.0001M4.5 9.75007V19.8751C4.5 20.4961 5.004 21.0001 5.625 21.0001H9.75V16.1251C9.75 15.5041 10.254 15.0001 10.875 15.0001H13.125C13.746 15.0001 14.25 15.5041 14.25 16.1251V21.0001H18.375C18.996 21.0001 19.5 20.4961 19.5 19.8751V9.75007M8.25 21.0001H16.5" stroke="#12132D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+               
+              </a>
+                <!-- Hover box with text information -->
+                <div class="hidden group-hover:block absolute hover:right-1  bg-white p-3 shadow-md">
+                Home
+                </div>
+            </div></li>
+              <li><div class="relative group">
+                <a class="text-black focus:outline-none bg-[#0307121a] p-2 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M16.862 4.487L18.549 2.799C18.9007 2.44733 19.3777 2.24976 19.875 2.24976C20.3723 2.24976 20.8493 2.44733 21.201 2.799C21.5527 3.15068 21.7502 3.62766 21.7502 4.125C21.7502 4.62235 21.5527 5.09933 21.201 5.451L6.832 19.82C6.30332 20.3484 5.65137 20.7367 4.935 20.95L2.25 21.75L3.05 19.065C3.26328 18.3486 3.65163 17.6967 4.18 17.168L16.863 4.487H16.862ZM16.862 4.487L19.5 7.125" stroke="#12132D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+               
+              </a>
+                <!-- Hover box with text information -->
+                <div class="hidden group-hover:block absolute hover:right-1  bg-white p-3 shadow-md">
+                Post
+                </div>
+            </div></li>
+              <li><div class="relative group">
+                <a class="text-black focus:outline-none bg-[#0307121a] p-2 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 7.5V10.5M18 10.5V13.5M18 10.5H21M18 10.5H15M12.75 6.375C12.75 7.27011 12.3944 8.12855 11.7615 8.76149C11.1285 9.39442 10.2701 9.75 9.375 9.75C8.47989 9.75 7.62145 9.39442 6.98851 8.76149C6.35558 8.12855 6 7.27011 6 6.375C6 5.47989 6.35558 4.62145 6.98851 3.98851C7.62145 3.35558 8.47989 3 9.375 3C10.2701 3 11.1285 3.35558 11.7615 3.98851C12.3944 4.62145 12.75 5.47989 12.75 6.375ZM3 19.235V19.125C3 17.4342 3.67165 15.8127 4.86719 14.6172C6.06274 13.4216 7.68424 12.75 9.375 12.75C11.0658 12.75 12.6873 13.4216 13.8828 14.6172C15.0784 15.8127 15.75 17.4342 15.75 19.125V19.234C13.8255 20.3931 11.6206 21.0038 9.374 21C7.043 21 4.862 20.355 3 19.234V19.235Z" stroke="#12132D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+               
+              </a>
+                <!-- Hover box with text information -->
+                <div class="hidden group-hover:block absolute hover:right-1  bg-white p-3 shadow-md">
+                  People
+                </div>
+            </div></li>
+              <li><div class="relative group">
+                <a class="text-black focus:outline-none bg-[#0307121a] p-2 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 3V4.5M3 4.5L5.77 3.807C7.8544 3.28605 10.0564 3.52795 11.978 4.489L12.086 4.543C13.9688 5.4843 16.1219 5.73589 18.171 5.254L21.281 4.522C20.9029 8.01155 20.9046 11.5318 21.286 15.021L18.172 15.753C16.1227 16.2354 13.9692 15.9842 12.086 15.043L11.978 14.989C10.0564 14.028 7.8544 13.786 5.77 14.307L3 15M3 4.5V15M3 21V15" stroke="#12132D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+               
+              </a>
+                <!-- Hover box with text information -->
+                <div class="hidden group-hover:block fixed hover:right-1  bg-white p-3 shadow-md">
+                Flag
+                </div>
+            </div></li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost mulish font-extrabold text-balance md:text-4xl">NewBee</a>
+        </div>
+        <div class="navbar-end lg:w-[80%] hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 space-x-5">
+           
+            <li > <div class="relative group">
+              <a class="text-black focus:outline-none bg-[#0307121a] p-2 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M2.25 12.0001L11.204 3.04507C11.644 2.60607 12.356 2.60607 12.795 3.04507L21.75 12.0001M4.5 9.75007V19.8751C4.5 20.4961 5.004 21.0001 5.625 21.0001H9.75V16.1251C9.75 15.5041 10.254 15.0001 10.875 15.0001H13.125C13.746 15.0001 14.25 15.5041 14.25 16.1251V21.0001H18.375C18.996 21.0001 19.5 20.4961 19.5 19.8751V9.75007M8.25 21.0001H16.5" stroke="#12132D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+             
+            </a>
+              <!-- Hover box with text information -->
+              <div class="hidden group-hover:block absolute hover:-top-12  bg-white p-3 shadow-md">
+                Home
+              </div>
+          </div></li>
+          <li > <div class="relative group">
+            <a class="text-black focus:outline-none bg-[#0307121a] p-2 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M16.862 4.487L18.549 2.799C18.9007 2.44733 19.3777 2.24976 19.875 2.24976C20.3723 2.24976 20.8493 2.44733 21.201 2.799C21.5527 3.15068 21.7502 3.62766 21.7502 4.125C21.7502 4.62235 21.5527 5.09933 21.201 5.451L6.832 19.82C6.30332 20.3484 5.65137 20.7367 4.935 20.95L2.25 21.75L3.05 19.065C3.26328 18.3486 3.65163 17.6967 4.18 17.168L16.863 4.487H16.862ZM16.862 4.487L19.5 7.125" stroke="#12132D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+           
+          </a>
+            <!-- Hover box with text information -->
+            <div class="hidden group-hover:block absolute hover:-top-12  bg-white p-3 shadow-md">
+            Post
+            </div>
+        </div></li>
+          
+        <li > <div class="relative group">
+          <a class="text-black focus:outline-none bg-[#0307121a] p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 7.5V10.5M18 10.5V13.5M18 10.5H21M18 10.5H15M12.75 6.375C12.75 7.27011 12.3944 8.12855 11.7615 8.76149C11.1285 9.39442 10.2701 9.75 9.375 9.75C8.47989 9.75 7.62145 9.39442 6.98851 8.76149C6.35558 8.12855 6 7.27011 6 6.375C6 5.47989 6.35558 4.62145 6.98851 3.98851C7.62145 3.35558 8.47989 3 9.375 3C10.2701 3 11.1285 3.35558 11.7615 3.98851C12.3944 4.62145 12.75 5.47989 12.75 6.375ZM3 19.235V19.125C3 17.4342 3.67165 15.8127 4.86719 14.6172C6.06274 13.4216 7.68424 12.75 9.375 12.75C11.0658 12.75 12.6873 13.4216 13.8828 14.6172C15.0784 15.8127 15.75 17.4342 15.75 19.125V19.234C13.8255 20.3931 11.6206 21.0038 9.374 21C7.043 21 4.862 20.355 3 19.234V19.235Z" stroke="#12132D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+         
+        </a>
+          <!-- Hover box with text information -->
+          <div class="hidden group-hover:block absolute hover:-top-12  bg-white p-3 shadow-md">
+            People
+          </div>
+      </div></li>
+          
+        <li > <div class="relative group">
+          <a class="text-black focus:outline-none bg-[#0307121a] p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M3 3V4.5M3 4.5L5.77 3.807C7.8544 3.28605 10.0564 3.52795 11.978 4.489L12.086 4.543C13.9688 5.4843 16.1219 5.73589 18.171 5.254L21.281 4.522C20.9029 8.01155 20.9046 11.5318 21.286 15.021L18.172 15.753C16.1227 16.2354 13.9692 15.9842 12.086 15.043L11.978 14.989C10.0564 14.028 7.8544 13.786 5.77 14.307L3 15M3 4.5V15M3 21V15" stroke="#12132D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+         
+        </a>
+          <!-- Hover box with text information -->
+          <div class="hidden group-hover:block absolute hover:-top-12  bg-white p-3 shadow-md">
+          Flag
+          </div>
+      </div></li>
+          </ul>
+        </div>
+        <div class="navbar-end lg:w-[20%] justify-center">
+          <a class="btn md:px-8 px-3 bg-[#797DFC] text-balance md:text-xl font-bold text-white rounded-3xl">Sign Up</a>
+        </div>
+      </div>
+
+    </nav>
+    <!-- Banner section starts -->
+    <section class="max-w-[1300px] lg:mx-auto mt-10  px-3 pt-7 bg-[url('./images/bgbanner.png')] bg-contain bg-no-repeat bg-[#12132D] h-[80vh]  flex items-center rounded-3xl bg-bottom">
+
+      <div class=" w-full lg:w-4/5 mx-auto flex lg:flex-row flex-col justify-around p-4 space-y-4 lg:space-y-0">
+        <!-- 1st div -->
+        <div class="space-y-8 lg:w-1/2 w-full" >
+          <h1 class="lg:text-6xl md:text-4xl text-2xl font-extrabold text-white">Welcome to the <br> <span class="bg-gradient-to-r from-[#797DFC]  to-[#252954] inline-block text-transparent bg-clip-text lg:text-6xl text-2xl font-extrabold ">NewBee</span> Forum</h1>
+          <p class="md:text-xl text-balance font-medium text-white mulish">Share your favorite opinion and win and wp forum coffee mug!</p>
+          <div class="flex justify-center sm:justify-start w-full  md:w-auto">
+            <input type="text" placeholder="Search here anything" class="input input-bordered  max-w-xs rounded-3xl py-7  w-full" id="input" />
+            <button class=" md:px-5 px-3 bg-[#797DFC] text-balance md:text-xl font-bold text-white rounded-3xl transform md:-translate-x-28 -translate-x-20 md:translate-y-[1px] translate-y-[0.5px]">Search</button>
+          </div>
+        </div>
+        <!-- 2nd div -->
+        <div class="bg-white p-5 rounded-3xl lg:w-2/5 w-full flex justify-center items-center">
+          <ul class="space-y-5">
+          <li class="text-[#12132dcc] md:text-2xl text-balance font-medium flex justify-between gap-10"><span>Registered Users</span><span>01</span></li>
+          <li class="text-[#12132dcc] md:text-2xl text-balance font-medium flex justify-between"><span>Forum</span><span>05</span></li>
+          <li class="text-[#12132dcc] md:text-2xl text-balance font-medium flex justify-between"><span>Topics</span><span>01</span></li>
+          <li class="text-[#12132dcc] md:text-2xl text-balance font-medium flex justify-between"><span>Replies</span><span>01</span></li>
+          </ul>
+
+        </div>
+      </div>
+
+    </section>
+   </header>
+
+    <!-- Main section starts -->
+
+    <main>
+
+      <!-- Discuss Section starts -->
+      <section class="max-w-[1300px] lg:mx-auto  px-3 pt-7 mt-10 space-y-6">
+        <h1 class="text-[12132D] text-4xl font-extrabold text-center">Let’s Discuss</h1>
+        <p class="text-[#12132d99] inter text-xl w-3/4 text-center mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+
+
+        <!-- Discuss section -->
+        <div id="discuss-container" class="mt-3 grid lg:grid-cols-[_3fr,_1fr] grid-cols-1 gap-5">
+
+          <div id="card-container" class="grid grid-cols-1 gap-8">
+
+          </div>
+         <div>
+          <div id="mark-container" class="bg-[#12132d0d] p-6 rounded-2xl w-auto">
+            <div class="flex justify-between mb-3">
+              <h3 class="text-[12132D] mulish text-xl font-semibold">Title</h3>
+              <div class="flex justify-between">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <g clip-path="url(#clip0_30_2429)">
+                    <path d="M7 12L12 17L22 7" stroke="#3DCE09" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L7 17M12 12L17 7" stroke="#3DCE09" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_30_2429">
+                      <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p class="text-[#12132d99] inter">Mark as read (<span id="read">0</span>)</p>
+              </div>
+            </div>
+
+          </div>
+         </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <script src="./script.js"></script>
+    
+</body>
+</html>

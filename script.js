@@ -1,6 +1,9 @@
 const cardContainer=document.getElementById('card-container');
 const markContainer=document.getElementById('mark-container');
 const latestContainer=document.getElementById('latest-container');
+const input=document.getElementById('input');
+const err=document.getElementById('error');
+const spinner=document.getElementById('spinner')
 let count=0;
 const read=document.getElementById('read');
 async function getallPost(){
@@ -11,9 +14,20 @@ async function getallPost(){
 }
 
 function cardShow(posts1){
+  cardContainer.innerHTML=``;
+  
+  if(posts1.length===0){
+    err.classList.remove('hidden');
+  }
+  else{
+    err.classList.add('hidden');
+  }
 
     posts1.forEach(element => {
-        
+    
+      setTimeout(()=>{
+        spinner.classList.add('hidden');
+      },3000);
       console.log(element);
         const newdiv=document.createElement('div');
         newdiv.classList=`bg-[#12132d0d] p-6 rounded-2xl flex md:flex-row flex-col justify-between`;
@@ -86,6 +100,35 @@ function cardShow(posts1){
 }
 
 
+async function queryPost(name){
+
+  
+    spinner.classList.remove('hidden');
+
+  const res= await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${name}`);
+  const data= await res.json();
+  const queryData=data.posts;
+  console.log(queryData);
+  cardShow(queryData);
+  
+}
+
+
+function search(){
+  const text=input.value;
+  if(text){
+    queryPost(text);
+
+    input.value='';
+  }
+  
+}
+
+
+
+
+
+
 
 async function getLatest(){
   const res= await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
@@ -135,6 +178,7 @@ function latestShow(data){
   })
 
 }
+
 
 
 getLatest();

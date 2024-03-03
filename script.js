@@ -36,9 +36,10 @@ function cardShow(posts1,s){
 
     posts1.forEach(element => {
     
-      console.log(element);
+      
         const newdiv=document.createElement('div');
         newdiv.classList=`bg-[#12132d0d] p-6 rounded-2xl flex md:flex-row flex-col justify-between`;
+
         newdiv.innerHTML=`<div class="md:w-1/4 w-full">
         ${element.isActive?`<div class="h-5 w-5 bg-green-600 rounded-[150%] transform translate-x-24 translate-y-4"></div>`:`<div class="h-5 w-5 bg-red-600 rounded-[150%] transform translate-x-24 translate-y-4"></div>`}
         <div><img src="${element.image}" class="w-28 rounded-2xl"/></div>
@@ -75,35 +76,30 @@ function cardShow(posts1,s){
 
 
         <div>
+      
        
         </div>
         </div>
 
 
         </div>`;
-      
 
-         // Create button element
+     // Create button element
      const button = document.createElement('button');
      button.classList.add('btn');
      const img = document.createElement('img');
      img.src = "./images/email 1.svg";
      button.appendChild(img);
-     button.classList=`translate-y-0 p-2 rounded-2xl  md:translate-y-40 lg:translate-y-46 xl:translate-y-40 mt-3 md:mt-3 xl:mt-0 lg:mt-2`;
      button.addEventListener('click', () => {
          mark(element.title, element.view_count);
      });
 
      const containerDiv = document.createElement('div');
+     containerDiv.classList=`flex items-end`
      containerDiv.appendChild(button);
-     newdiv.appendChild(containerDiv);
-     cardContainer.appendChild(newdiv);
-
-      
+        newdiv.appendChild(containerDiv);
         cardContainer.appendChild(newdiv);
-
-
-        
+        cardContainer.appendChild(newdiv);
  
  
  
@@ -117,8 +113,6 @@ function cardShow(posts1,s){
   },s);
 
 
-
-
 }
 
 
@@ -130,7 +124,6 @@ async function queryPost(name,s){
   const res= await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${name}`);
   const data= await res.json();
   const queryData=data.posts;
-  console.log(queryData);
   cardShow(queryData,s);
   
 }
@@ -151,12 +144,9 @@ function search(){
 
 
 
-
-
 async function getLatest(){
   const res= await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
   const data= await res.json();
-  console.log(data);
   latestShow(data);
 }
 
@@ -165,7 +155,7 @@ function latestShow(data){
   data.forEach(element =>{
    
     newdiv2=document.createElement('div');
-    newdiv2.innerHTML=`<div class="card card-compact  bg-base-100 shadow-xl p-4 md:h-[70vh] h-auto">
+    newdiv2.innerHTML=`<div class="card card-compact  bg-base-100 shadow-xl p-4 md:h-[72.5vh] h-auto">
     <div><img src="${element.cover_image}" alt="Shoes" class="w-full" /></div>
     <div class="card-body">
       <div class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -209,7 +199,6 @@ getLatest();
 function mark(t,v){
     console.log(t,v);
     count++;
-    console.log(count);
     read.innerText=parseInt(count);
     const div2=document.createElement('div');
     div2.classList=` bg-white mb-3 w-full rounded-2xl`;

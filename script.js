@@ -6,15 +6,22 @@ const err=document.getElementById('error');
 const spinner=document.getElementById('spinner')
 let count=0;
 const read=document.getElementById('read');
-async function getallPost(){
+
+
+async function getallPost(s){
+  spinner.classList.remove('hidden');
     const res= await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
     const data= await res.json();
     const posts1=data.posts;
-    cardShow(posts1);
+    cardShow(posts1,s);
 }
 
-function cardShow(posts1){
+function cardShow(posts1,s){
   cardContainer.innerHTML=``;
+
+  setTimeout(()=>{
+    spinner.classList.add('hidden');
+  },2000);
   
   if(posts1.length===0){
     err.classList.remove('hidden');
@@ -23,11 +30,12 @@ function cardShow(posts1){
     err.classList.add('hidden');
   }
 
+  setTimeout(()=>{
+
+
+
     posts1.forEach(element => {
     
-      setTimeout(()=>{
-        spinner.classList.add('hidden');
-      },3000);
       console.log(element);
         const newdiv=document.createElement('div');
         newdiv.classList=`bg-[#12132d0d] p-6 rounded-2xl flex md:flex-row flex-col justify-between`;
@@ -81,7 +89,7 @@ function cardShow(posts1){
      const img = document.createElement('img');
      img.src = "./images/email 1.svg";
      button.appendChild(img);
-     button.classList=`translate-y-0 border-4 p-2 rounded-2xl  md:translate-y-40 lg:translate-y-46 xl:translate-y-40 mt-3 md:mt-3 xl:mt-0 lg:mt-2`;
+     button.classList=`translate-y-0 p-2 rounded-2xl  md:translate-y-40 lg:translate-y-46 xl:translate-y-40 mt-3 md:mt-3 xl:mt-0 lg:mt-2`;
      button.addEventListener('click', () => {
          mark(element.title, element.view_count);
      });
@@ -96,20 +104,34 @@ function cardShow(posts1){
 
 
         
-    });
+ 
+ 
+ 
+      });
+
+
+
+
+
+    
+  },s);
+
+
+
+
 }
 
 
-async function queryPost(name){
+async function queryPost(name,s){
 
   
-  // spinner.classList.remove('hidden');
+  spinner.classList.remove('hidden');
 
   const res= await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${name}`);
   const data= await res.json();
   const queryData=data.posts;
   console.log(queryData);
-  cardShow(queryData);
+  cardShow(queryData,s);
   
 }
 
@@ -117,9 +139,10 @@ async function queryPost(name){
 function search(){
   const text=input.value;
   if(text){
-    queryPost(text);
+    queryPost(text,2000);
 
     input.value='';
+   
   }
   
 }
@@ -204,6 +227,6 @@ function mark(t,v){
 
 
 
-getallPost();
+getallPost(2000);
 
 

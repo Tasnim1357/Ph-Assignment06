@@ -14,7 +14,7 @@ function cardShow(posts1){
 
     posts1.forEach(element => {
         
-
+      console.log(element);
         const newdiv=document.createElement('div');
         newdiv.classList=`bg-[#12132d0d] p-6 rounded-2xl flex md:flex-row flex-col justify-between`;
         newdiv.innerHTML=`<div class="md:w-1/4 w-full">
@@ -36,7 +36,7 @@ function cardShow(posts1){
 
 
         <div class="flex md:flex-row flex-col justify-between md:p-4 p-1">
-        <div class="flex justify-between pt-4 lg:w-1/2 w-full">
+        <div class="flex justify-between pt-4 lg:w-3/4 w-full">
         <div class="flex space-x-1 lg:space-x-3 items-center"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
         <path d="M9.33333 10.5H18.6667M9.33333 15.1666H16.3333M10.5 21H7C6.07174 21 5.1815 20.6312 4.52513 19.9748C3.86875 19.3185 3.5 18.4282 3.5 17.5V8.16663C3.5 7.23837 3.86875 6.34813 4.52513 5.69175C5.1815 5.03538 6.07174 4.66663 7 4.66663H21C21.9283 4.66663 22.8185 5.03538 23.4749 5.69175C24.1313 6.34813 24.5 7.23837 24.5 8.16663V17.5C24.5 18.4282 24.1313 19.3185 23.4749 19.9748C22.8185 20.6312 21.9283 21 21 21H17.5L14 24.5L10.5 21Z" stroke="#12132D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg><p>${element.comment_count}</p></div>
@@ -53,12 +53,31 @@ function cardShow(posts1){
 
 
         <div>
-        <button class="btn" onclick="mark('${element.title}','${element.view_count}')"><img src="./images/email 1.svg"/></button>
+       
         </div>
         </div>
 
 
         </div>`;
+      
+
+         // Create button element
+     const button = document.createElement('button');
+     button.classList.add('btn');
+     const img = document.createElement('img');
+     img.src = "./images/email 1.svg";
+     button.appendChild(img);
+     button.classList=`translate-y-0 border-4 p-2 rounded-2xl  md:translate-y-40 lg:translate-y-46 xl:translate-y-40 mt-3 md:mt-3 xl:mt-0 lg:mt-2`;
+     button.addEventListener('click', () => {
+         mark(element.title, element.view_count);
+     });
+
+     const containerDiv = document.createElement('div');
+     containerDiv.appendChild(button);
+     newdiv.appendChild(containerDiv);
+     cardContainer.appendChild(newdiv);
+
+      
         cardContainer.appendChild(newdiv);
 
 
@@ -78,7 +97,7 @@ async function getLatest(){
 function latestShow(data){
 
   data.forEach(element =>{
-    console.log(element);
+   
     newdiv2=document.createElement('div');
     newdiv2.innerHTML=`<div class="card card-compact  bg-base-100 shadow-xl p-4 md:h-[70vh] h-auto">
     <div><img src="${element.cover_image}" alt="Shoes" class="w-full" /></div>
@@ -127,17 +146,20 @@ function mark(t,v){
     read.innerText=parseInt(count);
     const div2=document.createElement('div');
     div2.classList=` bg-white mb-3 w-full rounded-2xl`;
-    div2.innerHTML=`<div class="flex justify-between p-2"><h3 class="text-[#12132D] text-lg font-semibold">${t}}</h3>
+    div2.innerHTML=`<div class="flex justify-between p-2"><h3 class="text-[#12132D] text-lg font-semibold">${t}</h3>
     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
     <path d="M11.6667 14C11.6667 14.6188 11.9125 15.2123 12.3501 15.6499C12.7877 16.0875 13.3812 16.3333 14 16.3333C14.6188 16.3333 15.2123 16.0875 15.6499 15.6499C16.0875 15.2123 16.3333 14.6188 16.3333 14C16.3333 13.3812 16.0875 12.7877 15.6499 12.3501C15.2123 11.9125 14.6188 11.6667 14 11.6667C13.3812 11.6667 12.7877 11.9125 12.3501 12.3501C11.9125 12.7877 11.6667 13.3812 11.6667 14Z" stroke="#12132D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M24.5 14C21.7 18.6667 18.2 21 14 21C9.8 21 6.3 18.6667 3.5 14C6.3 9.33333 9.8 7 14 7C18.2 7 21.7 9.33333 24.5 14Z" stroke="#12132D" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </svg><p>${v}</p></div></div>
     <div></div>`;
-    markContainer.appendChild(div2);
+  markContainer.appendChild(div2);
 
+    
    
 }
 
 
 
 getallPost();
+
+

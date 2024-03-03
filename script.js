@@ -103,7 +103,7 @@ function cardShow(posts1){
 async function queryPost(name){
 
   
-    spinner.classList.remove('hidden');
+  // spinner.classList.remove('hidden');
 
   const res= await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${name}`);
   const data= await res.json();
